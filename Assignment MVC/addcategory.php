@@ -1,4 +1,4 @@
-<?php 
+<?php include 'admin_header.php';
 	  include 'controllers/CategoryController.php';
 ?>
 <!--addproduct starts -->

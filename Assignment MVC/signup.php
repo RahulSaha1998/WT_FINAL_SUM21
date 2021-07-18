@@ -1,6 +1,5 @@
-<?php
-	include 'controllers/UserController.php';
-?>
+<?php include 'main_header.php';?>
+<?php include 'controllers/UserController.php';?>
 
 <!--sign up starts -->
 <div class="center-login">

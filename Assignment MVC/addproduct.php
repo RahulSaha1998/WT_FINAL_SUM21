@@ -1,4 +1,5 @@
 <?php
+    include 'admin_header.php';
 	require_once 'controllers/ProductController.php';
 	require_once 'controllers/CategoryController.php';
 	$categories = getAllCategories();

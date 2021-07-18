@@ -58,11 +58,11 @@
 	}
 	
 	function insertUser($name,$uname,$email,$pass){
-		$query  = "insert into users values (NULL,'$name','$uname','$email','$pass')";
+		$query  = "insert into user values (NULL,'$name','$uname','$email','$pass')";
 		return execute($query);	
 	}
 	function authenticateUser($uname,$pass){
-		$query ="select * from users where username='$uname' and password='$pass'";
+		$query ="select * from user where username='$uname' and password='$pass'";
 		$rs = get($query);
 		if(count($rs)>0){
 			return true;

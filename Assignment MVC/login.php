@@ -1,4 +1,4 @@
-<?php 
+<?php include 'main_header.php';
 	  include 'controllers/UserController.php';
 ?>
 
