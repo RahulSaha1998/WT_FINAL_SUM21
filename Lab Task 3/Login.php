@@ -1,43 +1,19 @@
-<?php
-error_reporting (E_ALL ^ E_NOTICE);
-require_once "UserController.php";
+<?php 
+	//include 'main_header.php';
+	include 'controllers/UserController.php';
 ?>
-<html>
-<body>
-<form action="" method="post">
-<table align="center">
-<tr><td></td></tr><tr><td></td></tr>
-<tr><td></td></tr><tr><td></td></tr>
-<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr><tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td> <h1> Login </h1> </td></tr>
-<span><?php echo $err_db; ?></span>
-<tr><td></td></tr>
-<tr><td align="center"> <b>Username: </b> </td> <td> <input name = "username" value = "<?php echo $username;?>" align="center" type="txt"  >
-<span><?php echo $err_username; ?></span></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td align="center"> <b>Password: </b> </td> <td> <input name = "password" value = "<?php echo $password;?>" align="center" type="password" >
-<span><?php echo $err_password; ?></span></td></tr>
-<tr><td></td></tr>
-<tr><td></td></tr>
-<tr><td></td><td>
-<tr><td></td><td align = "right"><input type='Submit' name='Login' value='Log In'></td></tr>
-<tr><td></td></td></tr>
 
-<tr></tr>
-<tr></tr>
-<tr></tr>
-<tr></tr>
-</td></tr>
-<tr><td></td></tr>
-</table>
-</body>
-</html>
+	<h1 >Login</h1>
+	<h5 ><?php echo $err_db;?></h5>
+	<form action="" method="post" >
+	
+		<h4>Username</h4> 
+		<input type="text" name="uname" value="<?php echo $uname;?>" >
+		<span class="text-danger"><?php echo $err_uname;?></span>
+	
+		<h4>Password</h4> 
+		<input type="password" name ="pass" value ="<?php echo $pass;?>" >
+        <span class="text-danger"><?php echo $err_pass;?></span>
+			
+		<input type="submit" name="btn_login" value="Login" >	
+	</form>

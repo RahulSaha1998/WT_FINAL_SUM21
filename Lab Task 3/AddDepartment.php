@@ -1,19 +1,28 @@
 <?php
-error_reporting (E_ALL ^ E_NOTICE);
-require_once 'DepartmentController.php';
-//require_once 'Controller/CategoryController.php';
-$dept = getalldept();
-?>
-
+	require_once 'main_header.php';
+    require_once 'controllers/StudentController.php';
+    require_once 'controllers/DeptController.php';
+    $departments=getAllDepartments();
+    ?>
 <html>
-<body>
-<h1 align ="center">Welcome Admin
-<form action="" method="post" enctype= "multipart/form-data">
-<p>ADD Departements:</p>
-<span><?php echo $err_db; ?></span>
-<p>Name:<input type="text" name = "Name"> </p>
-<p>ID:<input type="text" name = "ID"> </p>
-
-<p><input type="submit" name ="add_dept" value="Add" > </p>
-</body>
+  <head></head>
+    <h5><?php echo $err_db;?></h5>
+    <body>
+        <form  method="post" action="">
+        <fieldset>
+        <table>
+         <td>  <b>Add Department</b></td>
+            <tr>
+               <td>Name:</td>
+			   <td><input type="text" name="name" value="<?php echo $name; ?>" > </td>
+               <td><span> <?php echo $err_name;?> </span></td>
+            </tr>    
+            <tr>
+                <td colspan="2" align="right"> <input type="submit" name="AddDepartment" value="Add Student"> </td>    
+            </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
 </html>
+<?php require_once 'main_footer.php';?>

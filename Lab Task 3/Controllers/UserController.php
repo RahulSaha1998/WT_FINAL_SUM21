@@ -1,62 +1,49 @@
-<?php
-error_reporting (E_ALL ^ E_NOTICE);
-//session_start();
-require_once "databaseConfig.php";
+<?php 
+    include 'models/db_config.php';
+    $uname = "";
+	$err_uname="";
+    $pass  = "";
+	$err_pass="";
+	$err_db="";
+	$hasError = false;
 
-$username = "";
-$err_username = "";
-$password = "";
-$err_password = "";
-
-$hasError = false;
-
-$users = array("Zubair"=>"1234","Saad"=>"14785","Rayhan"=>"745896");
-$admin = array("Rahim"=>"12345","Sakib"=>"34567","Sayema"=>"789");
-
-if($_SERVER["REQUEST_METHOD"] == "POST")
-{
-	if(empty($_POST["username"]))
+    if(isset($_POST["btn_login"]))
 	{
-		$hasError = true;
-		$err_username = "UserName required";
-	}
-	else
-	{
-		$username = $_POST["username"];
-	}
-	if(empty($_POST["password"]))
-	{
-		$hasError = true;
-		$err_password = "Password required";
-	}
-	else
-	{
-		$password = $_POST["password"];
-	}
-	if(!$hasError)
-	{
-		foreach($users as $u=>$p)
+		if(empty($_POST["uname"]))
+        {
+            $hasError = true;
+            $err_uname="Username Required";
+        }
+        else
+        {
+            $uname=htmlspecialchars($_POST["uname"]);
+        }
+		if(empty($_POST["pass"]))
+        {
+            $hasError = true;
+            $err_pass="Password Required";
+        }
+         else
+        {
+            $pass=htmlspecialchars($_POST["pass"]);
+        }
+		if(!$hasError)
 		{
-			if($username == $u && $password == $p)
+			if(authenticateUser($uname,$pass))
 			{
-				//$_SESSION["loggeduser"] = $username;
-				setcookie("loggeduser",$username,time()+120);
-				//header("Location: Signup.php");
+				header("Location: Dashboard.php");
 			}
+			$err_db = "Username or password invalid";
 		}
-		foreach($admin as $a=>$q)
+    } 
+	function authenticateUser($uname,$pass)
+	{
+		$query ="select * from admin where uname='$uname' and pass='$pass'";
+		$rs = get($query);
+		if(count($rs)>0)
 		{
-			if($username == $a && $password == $q)
-			{
-				//$_SESSION["loggeduser"] = $username;
-				setcookie("loggeduser",$username,time()+120);
-				header("Location:Dashboard.php");
-			}
+			return true;
 		}
-		echo "invalid username";
+		return false;
 	}
-	
-
-}
-		
 ?>
