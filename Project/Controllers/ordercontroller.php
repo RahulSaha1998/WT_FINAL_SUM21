@@ -1,6 +1,6 @@
 <?php
 
-    include 'admin_header.php';
+    include 'customer_header.php';
 
 	$name="";
 	$err_name="";
@@ -99,7 +99,7 @@
 			$postal = $_POST["postal"];
 		}
 		
-		if($hasError){
+		if(!$hasError){
 
 			header('location:payment.php');
 			

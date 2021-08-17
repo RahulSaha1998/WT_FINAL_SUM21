@@ -1,5 +1,6 @@
  <?php
      
+	 include'models/db_config.php';
 	
  
     $name="";
@@ -100,12 +101,20 @@
 			$postal = $_POST["postal"];
 		}
 		
+		
+		
 		if(!$hasError){
 
 			header('location:Homepage.php');
 			
 
 		}
+		
+		function insertUser($name,$number,$email,$saddress,$city,$state,$postal){
+		$query = "insert into update values (NULL,'$name','$number','$saddress','$city','$state','$postal')";
+		return execute($query);
+		
+	}
 	}
 	
 	?>

@@ -9,12 +9,12 @@
       <form>
 	     <table>
 		    <tr><h2>
-			Thanks for placing your order!
+			Please Submit your experience About us!
 			</tr>
 			<tr> 
 			<td>Comments:</td>
 			<td><textarea placeholder="write your opinion..."></textarea></td>
-			<td align="center"><button> <a href ="Homepage.php"> Back to home</a> </button></td>
+			<td align="center"></td>
 			</tr>
 			<tr>
 			<td colspan="1" align="right" ><input type="submit" name="submit" value="Submit" ></td>		

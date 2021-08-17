@@ -27,8 +27,7 @@
 		if(!$hasError){
 			foreach($users as $u=>$p){
 				if($uname == $u && $pass==$p){
-					//$_SESSION["loggeduser"] = $uname;
-					setcookie("loggeduser",$uname,time()+120);
+					$_SESSION["loggeduser"] = $uname;
 					header("Location: Homepage.php");
 				}
 			}

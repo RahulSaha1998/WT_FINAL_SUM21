@@ -50,7 +50,7 @@
 		if(!$hasError){
 			$rs = insertUser($name,$uname,$_POST["email"],$_POST["pass"]);
 			if($rs === true){
-				header("Location: login.php");
+				header("Location: LL.php");
 			}
 			$err_db = $rs;
 		}

@@ -1,7 +1,9 @@
 <?php
       require 'Controllers/updateController.php';
       require'js/jsController.js'; 
+	  
 ?>
+
 
 
 <html>
@@ -11,6 +13,7 @@
     <table align="center" width="50%">
         <tr>
             <td>
+			
                 <body background="Homepage.png" style="background-size: 100% 100%">
                     <form action="" onsubmit="return validate()" method="post">
                         <fieldset>

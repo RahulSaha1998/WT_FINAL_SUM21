@@ -1,4 +1,8 @@
-
+<?php session_start();
+      if(!isset($_SESSION["loggeduser"])){
+		  header("Location: login.php");
+	  }
+ ?>
 
 <html>
 	<head>
@@ -7,14 +11,14 @@
 	</head>
 	<body>
 		<div class="text-center">
-			<h1 class="header">Welcome To our WebSite </h1>
+			<h1 class="header">Welcome <?php echo $_SESSION["loggeduser"];?></h1>
 		</div>
 		<!--menu starts-->
 		<div class="text-center">
 			<a href="Homepage.php" class="btn btn-primary">Homepage</a>	
 			<a href="update.php" class="btn btn-info">Update Profile</a>				
-			<a href="allcategories.php" class="btn btn-danger">Order History</a>
-			<a href="addcategory.php" class="btn btn-info">Review us</a>
+			<a href="About.php" class="btn btn-danger">About Us</a>
+			<a href="Review.php" class="btn btn-info">Review us</a>
 			<a href="login.php" class="btn btn-danger">Logout</a>		
 		</div> 
 		
