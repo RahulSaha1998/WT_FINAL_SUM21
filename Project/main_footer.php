@@ -1,6 +1,6 @@
-<!--footer-->
+		<!--footer-->
 		<footer class="footer">
-			<h4>This is lab-2</h4>
+			<h4>Final Project</h4>
 		</footer>
 		
 	</body>
